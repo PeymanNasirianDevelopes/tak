@@ -1,0 +1,1 @@
+!function(t){"use strict";t.set_star_marks=function(){t("[data-marks]").each(function(){var a=parseFloat(t(this).data("marks"))/5*100;t(this).css("width",a+"%")})}}(jQuery);
