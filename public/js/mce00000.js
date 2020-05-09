@@ -1,0 +1,1 @@
+!function(e){"use strict";jQuery(document).on("ready",function(){jQuery(".validate-form").bootstrapValidator({fields:{EMAIL:{validators:{notEmpty:{message:"Please supply your email address"},emailAddress:{message:"Please supply a valid email address"}}}}})})}(jQuery);
