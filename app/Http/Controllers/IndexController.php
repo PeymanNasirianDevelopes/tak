@@ -8,8 +8,12 @@ use App\Service;
 use App\Feature;
 use App\MakeDream;
 use App\CircleCounter;
-
+use App\FeatureSection;
+use App\Video;
+use App\Plan;
 use App\Tab;
+use App\Landing;
+use App\Client;
 
 use DemeterChain\C;
 use Illuminate\Http\Request;
@@ -24,10 +28,18 @@ class IndexController extends Controller
         $feature=Feature::first() ?? new Feature;
         $make_dream=MakeDream::first() ?? new MakeDream;
         $circles=CircleCounter::all() ?? new CircleCounter;
+        $feature_section_image=FeatureSection::first() ?? new FeatureSection;
+        $feature_sections=FeatureSection::all() ?? new FeatureSection;
+        $video=Video::first() ?? new Video;
+        $plans=Plan::all() ?? new Plan;
+        $clients=Client::all() ?? new Client;
+        $landing=Landing::first() ?? new Landing;
+
 
         $tabs=Tab::all() ?? new Tab;
 
-        return view("index")->with(compact('header','services','abouts', 'feature','make_dream','circles','tabs'));
+        return view("index")->with(compact('header','services','abouts', 'feature','make_dream','circles','tabs','feature_section_image','feature_sections','video','plans'
+        ,'clients','landing'));
 
 
 

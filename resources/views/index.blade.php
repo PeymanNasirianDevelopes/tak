@@ -129,12 +129,12 @@
 
 			<!-- CTA BOX - 6 -->
 			<section>
-				<div class="cta cta-box-6 cta-bg-cover-black" data-parallax-type="fixed" data-parallax-img="{{asset("images/cta_box_image_2_1920x1246.jpg")}}">
+				<div class="cta cta-box-6 cta-bg-cover-black" data-parallax-type="fixed" data-parallax-img="{{asset("images/$landing->image")}}">
 					<div class="cta-wrap">
 						<div class="headline-6 text-center" data-animation="fadeIn">
-							<h2 class="h-extra-large h-white">Landing Page UI Kit</h2>
+							<h2 class="h-extra-large h-white">{{$landing->title}}</h2>
 							<div class="divider styled-1"></div>
-							<p class="h-white">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem.</p>
+							<p class="h-white">{{$landing->content}}</p>
 						</div>
 						<div class="btn-wrap text-center" data-animation="fadeIn">
 							<a class="btn btn-appstore btn-apple btn-white" href=""></a>
@@ -225,5 +225,3 @@
 
 	</body>
 </html>
-
-<!-- This document saved from http://raiseapp-html.themeapollo.com/dark/landing_06.html -->
