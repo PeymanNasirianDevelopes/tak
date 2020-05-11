@@ -8,6 +8,7 @@ use App\Service;
 use App\Feature;
 use App\MakeDream;
 use App\CircleCounter;
+use App\Tab;
 use DemeterChain\C;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class IndexController extends Controller
         $feature=Feature::first() ?? new Feature;
         $make_dream=MakeDream::first() ?? new MakeDream;
         $circles=CircleCounter::all() ?? new CircleCounter;
+        $tabs=Tab::all() ?? new Tab;
 
-        return view("index")->with(compact('header','services','abouts', 'feature','make_dream','circles'));
+        return view("index")->with(compact('header','services','abouts', 'feature','make_dream','circles','tabs'));
     }
 }
