@@ -13,3 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/','IndexController@main');
+
+Auth::routes();
+
+Route::get('/app/cms/admin', 'HomeController@index')->name('home');
+Route::resource('app/cms/admin/sliders','SliderController');
+Route::resource('app/cms/admin/aboutus','AboutUsController')->only('edit','update','index');

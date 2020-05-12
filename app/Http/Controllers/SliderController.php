@@ -14,7 +14,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-        //
+        $slider= slider::first();
+        return view('admin.slider')->with(compact('slider'));
     }
 
     /**

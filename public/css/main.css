@@ -1,0 +1,29 @@
+
+
+body{
+    font-family: 'Yekan';
+}
+
+
+.exact-center {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.hidden{
+    display: none;
+}
+
+.half-x {
+    font-size: 2em;
+    font-width: bold;
+    line-height: 0.5em;
+}
+.delete-photo:hover{
+    text-decoration: none;
+    margin: 20px;
+}
