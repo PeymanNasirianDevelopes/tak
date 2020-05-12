@@ -14,6 +14,8 @@ use App\Plan;
 use App\Tab;
 use App\Landing;
 use App\Client;
+use App\Contaact;
+use App\Footer;
 
 use DemeterChain\C;
 use Illuminate\Http\Request;
@@ -34,12 +36,14 @@ class IndexController extends Controller
         $plans=Plan::all() ?? new Plan;
         $clients=Client::all() ?? new Client;
         $landing=Landing::first() ?? new Landing;
+        $contact=Contaact::first() ?? new Contaact;
+        $footers=Footer::all() ?? new Footer;
 
 
         $tabs=Tab::all() ?? new Tab;
 
         return view("index")->with(compact('header','services','abouts', 'feature','make_dream','circles','tabs','feature_section_image','feature_sections','video','plans'
-        ,'clients','landing'));
+        ,'clients','landing','contact','footers'));
 
 
 
