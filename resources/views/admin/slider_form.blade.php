@@ -1,9 +1,9 @@
-@extends('admin_n.dashboard')
+@extends('admin.dashboard')
 @section('content')
-    @include("admin_n.fragments.errors")
+    @include("admin.fragments.errors")
     <div class="box box-info">
         <div class="box-header">
-            <h3 class="box-title">افزودن اسلایدر جدید
+            <h3 class="box-title">ویرایش اسلاید
 
             </h3>
             <!-- tools box -->
@@ -19,39 +19,46 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body pad">
-            <form action="{{url("app/cmsadmin/admin/sliders/$slider->id")}}" method="post" enctype="multipart/form-data">
+            <form action="{{url("app/cms/admin/sliders/$slider->id")}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @if($slider->id)
                     {{method_field("PUT")}}
                 @endif
                 <label>عنوان</label>
                 <input class="form-control input-lg" name="title" type="text" placeholder="عنوان" value="{{$slider->title ?? old("title")}}">
+
+
                 <br>
-                <label>نام دکمه</label>
-                <input class="form-control input-lg" name="btn_name" type="text" placeholder="نام دکمه" value="{{ $slider->btn_name ?? old("btn_name")}}">
+                <label>متن زیر فیلد</label>
+                <input class="form-control input-lg" name="subscribe_text" type="text" placeholder="عنوان" value="{{$slider->subscribe_text ?? old("subscribe_text")}}">
+
+
                 <br>
-                <label>لینک</label>
-                <input class="form-control input-lg" name="btn_link" type="text" placeholder="لینک" value="{{ $slider->btn_link ?? old("btn_link")}}">
-                <br>
-                <label>نمایش در سایت: </label>
+                <label>نمایش عضویت ایمیل : </label>
                 <label>
-                     بله<input  @if($slider->show) checked @endif type="radio" name="show" value="1" class="flat-red" >
+                     بله<input  @if($slider->show_input) checked @endif type="radio" name="show_input" value="1" class="flat-red" >
                 </label>
                 <label>
-                 خیر   <input type="radio" name="show" value="0" class="flat-red" @if(!$slider->show) checked @endif >
+                 خیر   <input type="radio" name="show_input" value="0" class="flat-red" @if(!$slider->show_input) checked @endif >
                 </label>
 
                 <br/><br/><br/>
                 <label>توضیحات</label>
-                <textarea  id="mytextarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name="description" rows="10" cols="80">{{ $slider->description ?? old("description")}}</textarea>
+                <textarea  id="mytextarea" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" name="content" rows="10" cols="80">{{ $slider->content ?? old("content")}}</textarea>
 
 <br>
 
                 <div class="form-group">
                     <label for="exampleInputFile">تصویر</label>
-                    <input name="image" type="file" value="{{ $slider->image ?? old("link")}}" id="exampleInputFile">
+                    <input name="main_image" type="file" value="{{ $slider->main_image ?? old("main_image")}}" id="exampleInputFile">
 
-                    <p class="help-block">متن راهنما</p>
+                    <p class="help-block">ابعاد رعایت شود</p>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">تصویر مویابل</label>
+                    <input name="phone_image" type="file" value="{{ $slider->phone_image ?? old("phone_image")}}" id="exampleInputFile">
+
+                    <p class="help-block">حتما png باشد</p>
                 </div>
 
 

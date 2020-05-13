@@ -97,8 +97,8 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('app/cms/admin/admin/sliders')}}"><i class="fa fa-circle-o"></i>مشاهده همه</a></li>
-                    <li><a href="{{url('app/cms/admin/admin/sliders/create')}}"><i class="fa fa-circle-o"></i> ایجاد جدید</a></li>
+                    <li><a href="{{url('app/cms/admin/sliders')}}"><i class="fa fa-circle-o"></i>مشاهده همه</a></li>
+                    <li><a href="{{url('app/cms/admin/sliders/create')}}"><i class="fa fa-circle-o"></i> ایجاد جدید</a></li>
 
                 </ul>
             </li>
@@ -110,7 +110,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{url('app/cms/admin/admin/aboutus')}}"><i class="fa fa-circle-o"></i>درباره ما</a></li>
+                    <li><a href="{{url('app/cms/admin/aboutus')}}"><i class="fa fa-circle-o"></i>درباره ما</a></li>
 
 
                 </ul>

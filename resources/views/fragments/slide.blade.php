@@ -24,9 +24,9 @@
 									<div class="container">
 										<div class="row">
 											<div class="col-md-5 text-center text-md-left">
-												<h1 class="color-white font-weight-black">{{$header->title}}</h1>
+												<h1  class="color-white IRANSans font-weight-black">{{$header->title}}</h1>
 												<div class="gap-20"></div>
-												<p class="color-white">{{$header->content}}</p>
+												<p class="color-white">{!!$header->content !!}</p>
 											</div>
 										</div>
 									</div>
@@ -51,11 +51,11 @@
 											<div class="col-md-6 col-sm-8 col-sm-offset-2 col-md-offset-0 text-center text-sm-left">
 												<form action="http://xthemeapollo.us15.list-manage.com/subscribe/post?u=2121b6ecf18fd2770fd40750e&amp;id=102c0b22e4" method="post" name="mc-embedded-subscribe-form" class="validate-form subscribe-form" target="_blank" data-toggle="validator">
 													<div class="form-elem input-box color-focus-white border-white placeholder-white">
-														<input type="email" name="EMAIL" placeholder="Add Your Eamil Address" value="">
+														<input type="email" name="EMAIL" placeholder="آدرس ایمیل خود را وارد کنید" value="">
 														<input type="hidden" name="b_2121b6ecf18fd2770fd40750e_102c0b22e4" tabindex="-1" value="">
 														<div class="elem-icon"><i class="icon-envelope-letter"></i></div>
 													</div>
-													<button type="submit" name="subscribe" class="hidden-xs btn btn-bg-green btn-border-green btn-color-black">Subscribe</button>
+													<button type="submit" name="subscribe" class="hidden-xs btn btn-bg-green btn-border-green btn-color-black">عضویت</button>
 													<button type="submit" name="subscribe" class="hidden-sm hidden-md hidden-lg btn btn-bg-green btn-border-green btn-color-black"><i class="fa fa-check" aria-hidden="true"></i></button>
 												</form>
 											</div>

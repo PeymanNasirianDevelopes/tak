@@ -12,6 +12,7 @@
 		<!-- Google fonts -->
 		<link href="{{asset("css/css00000.css")}}" rel="stylesheet">
 		<link href="{{asset("css/font-awe.css")}}" rel="stylesheet">
+		<link href="{{asset("css/fonts.css")}}" rel="stylesheet">
 		<link href="{{asset("css/simple-l.css")}}" rel="stylesheet">
 
 		<!-- CSS -->

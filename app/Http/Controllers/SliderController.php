@@ -7,80 +7,50 @@ use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __cunstruct(){
+        $this->middleware('admin');
+    }
+
     public function index()
     {
         $slider= slider::first();
         return view('admin.slider')->with(compact('slider'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function show(slider $slider)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\slider  $slider
-     * @return \Illuminate\Http\Response
-     */
     public function edit(slider $slider)
     {
-        //
+        return view("admin.slider_form")->with(compact("slider"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\slider  $slider
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, slider $slider)
     {
-        //
+        $data=ValidationController::sliders();
+        if ($image=$request->main_image || $phone=$request->phone_image){
+
+            $main_image= $request->file('main_image');
+            $mobile_photo=$request->file('phone_image');
+
+            $data['main_image']= do_upload($main_image);
+            $data['phone_image']= do_upload($mobile_photo);
+
+
+
+        }
+
+        $update=$slider->update($data);
+
+
+
+
+
+            return redirect("app/cms/admin/sliders");
+
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\slider  $slider
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(slider $slider)
-    {
-        //
-    }
+
 }
