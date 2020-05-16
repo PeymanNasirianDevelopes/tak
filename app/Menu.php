@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    //
+    protected $guarded= ['id'];
+    public function sub_menus(){
+        return $this->hasMany(SubMenu::class);
+    }
 }

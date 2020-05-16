@@ -16,6 +16,7 @@ use App\Landing;
 use App\Client;
 use App\Contaact;
 use App\Footer;
+use App\Menu;
 
 use DemeterChain\C;
 use Illuminate\Http\Request;
@@ -38,12 +39,14 @@ class IndexController extends Controller
         $landing=Landing::first() ?? new Landing;
         $contact=Contaact::first() ?? new Contaact;
         $footers=Footer::all() ?? new Footer;
+        $menus=Menu::all()->where("class","x-megamenu") ?? new Menu;
+        $menu_dives=Menu::all()->where("class",NULL) ?? new Menu;
 
 
         $tabs=Tab::all() ?? new Tab;
 
         return view("index")->with(compact('header','services','abouts', 'feature','make_dream','circles','tabs','feature_section_image','feature_sections','video','plans'
-        ,'clients','landing','contact','footers'));
+        ,'clients','landing','contact','footers','menus','menu_dives'));
 
 
 

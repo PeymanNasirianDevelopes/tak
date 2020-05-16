@@ -23,10 +23,12 @@ $('#slider-'+TaskId).submit();
 $('a.delete-photo').click(function () {
     var id= $(this).attr('data-photo-id');
     var input= '  <input type="hidden" name="photo_ids[]" value="'+id+'">';
+    console.log(id);
     $('#photos-tobe-deleted').append(input);
-    $(this).parents('.col-md-4').remove();
+    $(this).parents('.col-md-2').remove();
 
 });
+
 });
 function sendAjax(method,formData,target){
 

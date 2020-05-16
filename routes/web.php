@@ -18,5 +18,8 @@ Auth::routes();
 
 Route::get('/app/cms/admin', 'HomeController@index')->name('home');
 Route::resource('app/cms/admin/sliders','SliderController')->only('edit','update','index');
+Route::resource('app/cms/admin/menus','MenuController');
+Route::resource('app/cms/admin/projects','ProjectController');
+Route::resource('app/cms/admin/submenus','SubMenuController');
 Route::resource('app/cms/admin/aboutus','AboutUsController')->only('edit','update','index');
 Route::post('ajax/{method}','AjaxController@main');

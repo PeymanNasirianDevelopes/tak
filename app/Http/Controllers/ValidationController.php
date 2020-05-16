@@ -24,8 +24,33 @@ class ValidationController extends Controller
             "btn_name"=>"string | between:3,100  ",
             "btn_link"=>"string | between:8,100  ",
             "sentences"=>"string | between:8,100 ",
-            "main_photo"=>"image | mimes:jpg,jpeg,png,tiff | max:2000   ",
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000   ",
             "text"=>"string    ",
         ]);
     }
+    public static function projects(){
+        return request()->validate([
+            "title"=>"string | between:4,100  ",
+            "date"=>"date | nullable  ",
+            "content"=>"string   ",
+            "sub_menu_id"=>"integer  ",
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000  ",
+
+        ]);
+    }
+
+    public static function menu(){
+        return request()->validate([
+            "title"=>"string | between:4,100  ",
+            "link"=>"string | nullable  ",
+            "class"=>"string |nullable  ",
+
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+        ]);
+    }
+
+
+
+
 }

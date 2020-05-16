@@ -1,4 +1,4 @@
-<div class="text-center exact-center  " id="sure_you"  style="display: none; z-index: 100;">
+<div class="text-center exact-center animated bounceInLeft " id="sure_you"  style="display: none; z-index: 100;">
 
 <p class="lead">
 

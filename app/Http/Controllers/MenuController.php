@@ -3,83 +3,114 @@
 namespace App\Http\Controllers;
 
 use App\Menu;
+use App\SubMenu;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $menus=Menu::all();
+       return view("admin.menu")->with(compact("menus"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function create(Menu $menu)
     {
-        //
+        return view("admin.menu_edit")->with(compact("menu"));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $data=ValidationController::menu();
+
+        $photo= $request->file('main_image');
+
+        $class=$request->submenu;
+        if($class==1){
+            $data['class']="x-megamenu";
+
+        }
+        else{
+            $data['class']=NULL;
+        }
+        $data['image']= do_upload($photo);
+        Menu::create($data);
+        HelperController::flash();
+        return redirect("app/cms/admin/menus");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Menu  $menu
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Menu $menu)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Menu  $menu
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Menu $menu)
     {
-        //
+        return view("admin.menu_edit")->with(compact("menu"));
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Menu  $menu
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Menu $menu)
     {
-        //
+
+        $menu_id= $request->id;
+
+        $data=$request->validate([
+            'title'=>'nullable',
+            'image'=>'nullable',
+
+        ]);
+
+        if ($image=$request->image){
+
+            $photo= $request->file('image');
+
+            $data['image']= do_upload($photo);
+
+
+        }
+//        if ($subtitles=$request->sub_titles){
+//            $ex=explode(" + ", "$subtitles");
+//            foreach ($ex as $subtitle){
+//
+//                SubMenu::make($subtitle,$menu_id);
+//
+//            }
+//        }
+        if($submenu=$request->sub_menu){
+            SubMenu::make($submenu,$menu_id);
+        }
+        if($photos_tobe_deleted=$request->photo_ids){
+
+            foreach ($photos_tobe_deleted as $id){
+                $photo_id=  SubMenu::find($id);
+                $photo_id->delete();
+
+
+            }
+        }
+        $update=$menu->update($data);
+
+        if($update){
+
+
+
+
+            return redirect("app/cms/admin/menus");
+
+        }
+        else{
+            return back()->withMessage();
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Menu  $menu
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Menu $menu)
     {
-        //
+        $menu->delete();
+        return redirect("app/cms/admin/menus");
     }
 }
