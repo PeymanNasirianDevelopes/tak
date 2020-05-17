@@ -52,6 +52,9 @@
             </li>
 
             <li><a href="{{url('app/cms/admin/sliders')}}"><i class="fa fa-circle-o"></i>مشاهده اسلایدر</a></li>
+            <li><a href="{{url('app/cms/admin/fonts')}}"><i class="fa fa-circle-o"></i>آیکون ها</a></li>
+            <li><a href="{{url('app/cms/admin/about_us')}}"><i class="fa fa-circle-o"></i>درباره ما</a></li>
+            <li><a href="{{url('app/cms/admin/feature')}}"><i class="fa fa-circle-o"></i>ویژگی ها</a></li>
 
 
 

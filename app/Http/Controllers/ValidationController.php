@@ -49,7 +49,16 @@ class ValidationController extends Controller
 
         ]);
     }
+    public static function about(){
+        return request()->validate([
+            "title"=>"string | between:4,100  ",
+            "content"=>"string | nullable  ",
 
+
+            "bg_image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+        ]);
+    }
 
 
 

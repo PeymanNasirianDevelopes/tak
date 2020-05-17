@@ -14,12 +14,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>
-پنل مدیریت
+      @include("admin.url")
   </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{asset("css/bootstrap-theme.css")}}">
+    <link href="{{asset("css/simple-l.css")}}" rel="stylesheet">
   <!-- Bootstrap rtl -->
   <link rel="stylesheet" href="{{asset("css/rtl.css")}}">
   <!-- Font Awesome -->
@@ -33,6 +34,7 @@
   <link rel="stylesheet" href="{{asset("css/fonts.css")}}">
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
     <link rel="stylesheet" href="{{asset("css/animate.css")}}">
+
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{asset("css/skins/_all-skins.min.css")}}">

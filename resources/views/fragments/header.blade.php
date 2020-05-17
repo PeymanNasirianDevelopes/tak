@@ -44,7 +44,7 @@
                                 <div class="col-md-3 col-sm-6 col-xs-12">
                                     <div class="small-icons">
                                        @foreach($menu->sub_menus as $submenu)
-                                        <div class="social-links"><a href="{{$submenu->link}}"><i class="icon-wrench icons"></i>{{$submenu->title}}</a></div>
+                                        <div class="social-links"><a href="{{$submenu->link}}">{{$submenu->title}}</a></div>
                                         @endforeach
                                     </div>
                                 </div><!-- /.col -->

@@ -35,26 +35,27 @@
                             </thead>
                             <tbody>
 
-                            @foreach($abouts as $key=>$about)
+
                                 <tr>
 
-                                    <td>{{$key+1}}
+                                    <td>1
                                     </td>
-                                    <td>{{$about->title}}</td>
-                                    <td>{{$about->content}}</td>
+                                    <td>{{$feature->title}}</td>
+                                    <td>{{$feature->h1}}</td>
+                                    <td>{{$feature->short_text}}</td>
 
-                                    <td><img src="{{asset("images/$about->bg_image")}}" width="190" height="150"/></td>
+                                    <td><img src="{{asset("images/$feature->main_image")}}" width="190" height="150"/></td>
 
 
                                     <td>
-                                        <a href="{{url("app/cms/admin/about_us/$about->id/edit")}}" title="Edit">  <i class="fa fa-edit half-x" style="font-size:1.5em;"></i></a></td>
+                                        <a href="{{url("app/cms/admin/feature/$feature->id/edit")}}" title="Edit">  <i class="fa fa-edit half-x" style="font-size:1.5em;"></i></a></td>
                                     <td>
 
                                     </td>
 
 
                                 </tr>
-                            @endforeach
+
                             </tbody>
                             <tfoot>
                             <tr>
