@@ -57,29 +57,12 @@
                 @endforeach
 
 
-                <li class="x-megamenu-wrapper">
-                    <a href="">امور مشتریان</a>
-                    <div style="text-align: right;" class="x-megamenu">
-                        <div class="container-fluid">
-                            <div class="row">
-                                @foreach($menu_dives as $menu_div)
-                                <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <div class="category-widget underline-list">
-                                        <h5 class="bottom-gap-small">{{$menu_div->title}}</h5>
-                                        @foreach($menu_div->sub_menus as $sub_menud)
-                                        <div class="cate-item"><a href="{{$sub_menud->link}}">{{$sub_menud->title}}</a></div>
-                                        @endforeach
-                                </div><!-- /.category-widget -->
-                                </div>
 
-                                @endforeach
-
-                            </div>
-                        </div>
-                    </div>
+                <li class="btn-wrapper">
+                    <a  href="{{url("/")}}"> ارتباط با ما</a>
                 </li>
                 <li class="btn-wrapper">
-                    <a class="icon-only" href="{{url("/")}}"> ارتباط با ما</a>
+                    <a  href="{{url("/")}}"> درباره ما</a>
                 </li>
 
 

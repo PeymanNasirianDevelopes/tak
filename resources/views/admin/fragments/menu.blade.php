@@ -55,6 +55,8 @@
             <li><a href="{{url('app/cms/admin/fonts')}}"><i class="fa fa-circle-o"></i>آیکون ها</a></li>
             <li><a href="{{url('app/cms/admin/about_us')}}"><i class="fa fa-circle-o"></i>درباره ما</a></li>
             <li><a href="{{url('app/cms/admin/feature')}}"><i class="fa fa-circle-o"></i>ویژگی ها</a></li>
+            <li><a href="{{url('app/cms/admin/make_dream/1/edit')}}"><i class="fa fa-circle-o"></i> ویرایش midd</a></li>
+            <li><a href="{{url('app/cms/admin/circle_counter')}}"><i class="fa fa-circle-o"></i> پیشرفت کار</a></li>
 
 
 

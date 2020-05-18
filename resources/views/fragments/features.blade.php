@@ -5,10 +5,10 @@
             <div class="col-md-12">
 
                 <div class="headline-10 text-center">
-                    <i class="icon-vector h-green"></i>
+                    <i class="{{$feature->font}} h-green"></i>
                     <h2>{{$feature->title}}</h2>
                     <h2 class="h-extra-large">{{$feature->h1}}</h2>
-                    <p>{{$feature->short_text}}</p>
+                    <p>{!! $feature->short_text !!}</p>
                 </div>
 
             </div>
@@ -35,18 +35,18 @@
 
 @foreach($feature->Tasks as $task)
 
-@if($task->id <= 3)
-                                    <div class="col-md-4 col-sm-6">
+
+                                    <div style="text-align: right !important;" dir="rtl" align="right" class="col-md-4 col-sm-6">
                                         <div class="row-top-gap"></div>
                                         <div class="icon-box icon-box-base text-sm-left text-xs-center" data-animation="fadeIn">
                                             <div class="row">
-                                                <div class="col-md-3 col-sm-3">
+                                                <div style="text-align: right !important;" class="col-md-3 col-sm-3">
                                                     <i class="{{$task->font}} icon-size-48"></i>
                                                 </div>
-                                                <div class="col-md-9 col-sm-9 reduce-padding-left">
+                                                <div style="text-align: right !important;" class="col-md-9 col-sm-9 reduce-padding-left">
                                                     <h4>{{$task->title}}</h4>
-                                                    <p>
-                                                        {{$task->content}}
+                                                    <p style="text-align: right !important;">
+                                                        {!! $task->content  !!}
                                                     </p>
                                                 </div>
                                             </div>
@@ -54,27 +54,6 @@
 
                                     </div>
 
-    @else
-                                    <div class="col-md-4 col-sm-6">
-                                        <div class="row-top-gap"></div>
-                                        <div class="icon-box icon-box-base text-sm-left text-xs-center" data-animation="fadeIn">
-                                            <div class="row">
-                                                <div class="col-md-3 col-sm-3">
-                                                    <i class="{{$task->font}} icon-size-48"></i>
-                                                </div>
-                                                <div class="col-md-9 col-sm-9 reduce-padding-left">
-                                                    <h4>{{$task->title}}</h4>
-                                                    <p>
-                                                        {{$task->content}}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-@endif
 @endforeach
 
 

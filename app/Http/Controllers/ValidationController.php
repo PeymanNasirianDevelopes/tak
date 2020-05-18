@@ -49,14 +49,34 @@ class ValidationController extends Controller
 
         ]);
     }
-    public static function about(){
+    public static function features(){
         return request()->validate([
             "title"=>"string | between:4,100  ",
-            "content"=>"string | nullable  ",
+            "short_text"=>"string | nullable  ",
+            "h1"=>"string | nullable  ",
+            "font"=>"string | nullable  ",
 
 
-            "bg_image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+            "main_image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
 
+        ]);
+    }
+    public static function make(){
+        return request()->validate([
+        "title"=>"nullable | string",
+            "content"=>"nullable | string",
+            "font"=>"string |nullable",
+
+        ]);
+    }
+
+
+
+    public static function circle(){
+        return request()->validate([
+            "title"=>"string",
+            "progress"=>"integer",
+            "class"=>"class"
         ]);
     }
 

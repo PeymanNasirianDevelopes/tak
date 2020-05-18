@@ -24,21 +24,21 @@ $urltitle30 = explode('/', $urltitle20);
 
     $urltitle5=$urltitle3[1];
         if($urltitle5=="create"){
-            $title= "ایجاد پروژه ";
+            $circle= "ایجاد پروژه ";
 
     }
         else{
                $urltitle6=$urltitle3[2];
 
    if ($urltitle6=="edit"){
-        $title= "ویرایش پروژه ";
+        $circle= "ویرایش پروژه ";
     }
         }
 
 
 }
     else{
-        $title="مشاهده پروژه ها";
+        $circle="مشاهده پروژه ها";
     }
       }
 
@@ -51,21 +51,21 @@ $urltitle30 = explode('/', $urltitle20);
 
     $urltitle5=$urltitle3[1];
         if($urltitle5=="create"){
-            $title= "ایجاد منو ";
+            $circle= "ایجاد منو ";
 
     }
         else{
                $urltitle6=$urltitle3[2];
 
    if ($urltitle6=="edit"){
-        $title= "ویرایش منو ";
+        $circle= "ویرایش منو ";
     }
         }
 
 
 }
     else{
-        $title="مشاهده منو ها";
+        $circle="مشاهده منو ها";
     }
       }
 
@@ -76,21 +76,21 @@ $urltitle30 = explode('/', $urltitle20);
 
     $urltitle5=$urltitle3[1];
         if($urltitle5=="create"){
-            $title= "ایجاد زیر منو ";
+            $circle= "ایجاد زیر منو ";
 
     }
         else{
                $urltitle6=$urltitle3[2];
 
    if ($urltitle6=="edit"){
-        $title= "ویرایش زیر منو ";
+        $circle= "ویرایش زیر منو ";
     }
         }
 
 
 }
     else{
-        $title="مشاهده زیر منو ها";
+        $circle="مشاهده زیر منو ها";
     }
       }
 
@@ -101,21 +101,21 @@ $urltitle30 = explode('/', $urltitle20);
 
     $urltitle5=$urltitle3[1];
         if($urltitle5=="create"){
-            $title= "ایجاد اسلایدر ";
+            $circle= "ایجاد اسلایدر ";
 
     }
         else{
                $urltitle6=$urltitle3[2];
 
    if ($urltitle6=="edit"){
-        $title= "ویرایش اسلایدر ";
+        $circle= "ویرایش اسلایدر ";
     }
         }
 
 
 }
     else{
-        $title="مشاهده اسلاید ها";
+        $circle="مشاهده اسلاید ها";
     }
       }
 
@@ -126,21 +126,21 @@ $urltitle30 = explode('/', $urltitle20);
 
     $urltitle5=$urltitle3[1];
         if($urltitle5=="create"){
-            $title= "ایجاد اسلایدر ";
+            $circle= "ایجاد اسلایدر ";
 
     }
         else{
                $urltitle6=$urltitle3[2];
 
    if ($urltitle6=="edit"){
-        $title= "ویرایش اسلایدر ";
+        $circle= "ویرایش اسلایدر ";
     }
         }
 
 
 }
     else{
-        $title="آیکون ها";
+        $circle="آیکون ها";
     }
       }
 
@@ -151,21 +151,21 @@ $urltitle30 = explode('/', $urltitle20);
 
     $urltitle5=$urltitle3[1];
         if($urltitle5=="create"){
-            $title= "ایجاد درباره ما ";
+            $circle= "ایجاد درباره ما ";
 
     }
         else{
                $urltitle6=$urltitle3[2];
 
    if ($urltitle6=="edit"){
-        $title= "ویرایش درباره ما ";
+        $circle= "ویرایش درباره ما ";
     }
         }
 
 
 }
     else{
-        $title="درباره ما ";
+        $circle="درباره ما ";
     }
       }
 
@@ -176,21 +176,99 @@ $urltitle30 = explode('/', $urltitle20);
 
     $urltitle5=$urltitle3[1];
         if($urltitle5=="create"){
-            $title= "ایجاد ویژگی ";
+            $circle= "ایجاد ویژگی ";
 
     }
         else{
                $urltitle6=$urltitle3[2];
 
    if ($urltitle6=="edit"){
-        $title= "ویرایش ویژگی ما ";
+        $circle= "ویرایش ویژگی ما ";
     }
         }
 
 
 }
     else{
-        $title="ویژگی ها  ";
+        $circle="ویژگی ها  ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+      if($urltitle4=="feature_task"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد ویژگی ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش ویژگی  ";
+    }
+        }
+
+
+}
+    else{
+        $circle="ویژگی ها  ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+
+      if($urltitle4=="make_dream"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد ویژگی ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش بخش وسط  ";
+    }
+        }
+
+
+}
+    else{
+        $circle="ویژگی ها  ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+      if($urltitle4=="circle_counter"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد پیشرفت ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش پیشرفت کار  ";
+    }
+        }
+
+
+}
+    else{
+        $circle="پیشرفت کار ";
     }
       }
 
@@ -202,12 +280,9 @@ $urltitle30 = explode('/', $urltitle20);
 
 
 
-
-
-
 }
     else{
-        $title="داشبرد مدیریت";
+        $circle="داشبرد مدیریت";
     }
 
 
@@ -219,7 +294,7 @@ $urltitle30 = explode('/', $urltitle20);
 
 
 
-       echo $title;
+       echo $circle;
 
     @endphp
 

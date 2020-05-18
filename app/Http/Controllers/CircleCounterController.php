@@ -7,77 +7,45 @@ use Illuminate\Http\Request;
 
 class CircleCounterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $circles=CircleCounter::all();
+        return view("admin.circle_counter")->with(compact("circles"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\CircleCounter  $circleCounter
-     * @return \Illuminate\Http\Response
-     */
     public function show(CircleCounter $circleCounter)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\CircleCounter  $circleCounter
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(CircleCounter $circleCounter)
     {
-        //
+        return view("admin.circle_edit")->with(compact("circleCounter"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\CircleCounter  $circleCounter
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, CircleCounter $circleCounter)
     {
-        //
+        $data=ValidationController::circle();
+        $update=$circleCounter->update($data);
+        if($update){
+          return  redirect("app/cms/admin/circle_counter");
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\CircleCounter  $circleCounter
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(CircleCounter $circleCounter)
     {
         //

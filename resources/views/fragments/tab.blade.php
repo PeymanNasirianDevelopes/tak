@@ -6,18 +6,18 @@
 							<!-- Tab with image content - dark style -->
 							<section>
 								<div class="tab tab-icon-header tab-icon-header-light">
-									<ul dir class="nav nav-tabs responsive" id="tab-text-header-light-2">
+									<ul  class="nav nav-tabs responsive" id="tab-text-header-light-2">
 
                                         @foreach($tabs as $tab)
                                         @if($tab->id==1)
-										<li class="active">
+										<li style="background-color: #1d1c1b !important" class="active">
 											<a href="#{{$tab->tab_id}}" data-toggle="tab">
 												<i class="{{$tab->font}} tab-header-icon"></i>
 												<span class="text-capitalize">{{$tab->title}}</span>
 											</a>
 										</li>
 									@else
-                                                <li>
+                                                <li style="background-color: #1d1c1b !important" >
                                                     <a href="#{{$tab->tab_id}}" data-toggle="tab">
                                                         <i class="{{$tab->font}} tab-header-icon"></i>
                                                         <span class="text-capitalize">{{$tab->title}}</span>

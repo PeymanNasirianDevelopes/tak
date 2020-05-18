@@ -22,7 +22,7 @@
 					<div style="background-image:url({{asset("images/$about->bg_image")}}) " class="{{$div_class}}">
 						<div class="{{$second_div_class}}">
 							<h2 class="{{$h2_class}}">{{$about->title}}</h2>
-							<p class="{{$p_class}}">{{$about->content}}</p>
+							<p class="{{$p_class}}">{!! $about->content !!}</p>
 						</div>
 					</div><!-- /.row -->
 

@@ -6,7 +6,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title"> ویژگی های ما</h3>
+                        <h3 class="box-title">پیشرفت کار</h3>
                     </div>
 
                     @if(session('message'))
@@ -26,51 +26,44 @@
                             <tr>
 
                                 <th>ردیف</th>
-                                <th> جمله اول </th>
-                                <th> جمله دوم </th>
-                                <th> فونت </th>
-                                <th>متن</th>
+                                <th> عنوان </th>
+                                <th>پیشرفت</th>
 
-                                <th>تصویر</th>
-                                <th colspan="2">فعالیت</th>
+
+                                <th>فعالیت</th>
                             </tr>
                             </thead>
                             <tbody>
 
-
+                            @foreach($circles as $key=>$circle)
                                 <tr>
 
-                                    <td>1
+                                    <td>{{$key+1}}
                                     </td>
-                                    <td>{{$feature->title}}</td>
-                                    <td>{{$feature->h1}}</td>
-                                    <td><i class="{{$feature->font}}" ></i></td>
-                                    <td>{!! $feature->short_text !!}</td>
+                                    <td>{{$circle->title}}</td>
+                                    <td>{{$circle->progress}}</td>
 
-                                    <td><img src="{{asset("images/$feature->main_image")}}" width="190" height="150"/></td>
 
 
                                     <td>
-                                        <a href="{{url("app/cms/admin/feature/$feature->id/edit")}}" title="Edit">  <i class="fa fa-edit half-x" style="font-size:1.5em;"></i></a></td>
+                                        <a href="{{url("app/cms/admin/circle_counter/$circle->id/edit")}}" title="Edit">  <i class="fa fa-edit half-x" style="font-size:1.5em;"></i></a></td>
                                     <td>
 
                                     </td>
 
 
                                 </tr>
-
+                            @endforeach
                             </tbody>
                             <tfoot>
                             <tr>
 
                                 <th>ردیف</th>
-                                <th> جمله اول </th>
-                                <th> جمله دوم </th>
-                                <th> فونت </th>
-                                <th>متن</th>
+                                <th> عنوان </th>
+                                <th>پیشرفت</th>
 
-                                <th>تصویر</th>
-                                <th colspan="2">فعالیت</th>
+
+                                <th>فعالیت</th>
                             </tr>
                             </tfoot>
                         </table>
