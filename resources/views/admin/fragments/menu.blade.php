@@ -75,6 +75,61 @@
                 </ul>
             </li>
 
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>تب ها</span>
+                    <span class="pull-left-container">
+              <i class="fa fa-angle-right pull-left"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('app/cms/admin/tabs')}}"><i class="fa fa-circle-o"></i>مشاهده تب ها</a></li>
+                    <li><a href="{{url('app/cms/admin/tabs/create')}}"><i class="fa fa-circle-o"></i>ایجاد تب </a></li>
+
+
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>نظرات مشتریان</span>
+                    <span class="pull-left-container">
+              <i class="fa fa-angle-right pull-left"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('app/cms/admin/testimonials')}}"><i class="fa fa-circle-o"></i>مشاهده نظرات </a></li>
+                    <li><a href="{{url('app/cms/admin/testimonials/create')}}"><i class="fa fa-circle-o"></i>ایجاد نظر </a></li>
+
+
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-edit"></i> <span>ویژگی های 2</span>
+                    <span class="pull-left-container">
+              <i class="fa fa-angle-right pull-left"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{url('app/cms/admin/features_2')}}"><i class="fa fa-circle-o"></i>مشاهده ویژگی دوم </a></li>
+                    <li><a href="{{url('app/cms/admin/features_2/create')}}"><i class="fa fa-circle-o"></i>ایجاد ویژگی 2 </a></li>
+
+
+                </ul>
+            </li>
+
+
+
+
+
+
+
+
+
+
+
         </ul>
     </section>
     <!-- /.sidebar -->

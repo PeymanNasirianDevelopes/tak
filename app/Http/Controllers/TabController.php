@@ -2,84 +2,74 @@
 
 namespace App\Http\Controllers;
 
+use App\Font;
 use App\Tab;
 use Illuminate\Http\Request;
 
 class TabController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $tabs=Tab::all();
+        return view("admin.tabs")->with(compact("tabs"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function create(Tab $tab)
     {
-        //
+
+        $fonts=Font::first();
+        return view("admin.tabs_edit")->with(compact("tab","fonts"));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+       $data=ValidationController::tabs();
+
+        if($photo= $request->file('image')){
+            $data['image']= do_upload($photo);
+        }
+
+
+
+        Tab::create($data);
+        HelperController::flash();
+        return redirect("app/cms/admin/tabs");
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Tab  $tab
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Tab $tab)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Tab  $tab
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Tab $tab)
     {
-        //
+        $fonts=Font::first();
+       return view("admin.tabs_edit")->with(compact("tab","fonts"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tab  $tab
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Tab $tab)
     {
-        //
+       $data=ValidationController::tabs();
+        if($photo= $request->file('image')){
+            $data['image']= do_upload($photo);
+        }
+        $update=$tab->update($data);
+        if($update){
+            return redirect("app/cms/admin/tabs");
+        }
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Tab  $tab
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Tab $tab)
     {
-        //
+        $tab->delete();
+        return redirect("app/cms/admin/tabs");
     }
 }

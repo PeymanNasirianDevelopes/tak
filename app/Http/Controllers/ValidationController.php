@@ -61,6 +61,43 @@ class ValidationController extends Controller
 
         ]);
     }
+
+    public static function tabs(){
+        return request()->validate([
+            "title"=>"string | between:4,100  ",
+            "head"=>"string | nullable  ",
+            "content"=>"string | nullable  ",
+            "font"=>"string | nullable  ",
+            "tab_id"=>"string | nullable",
+
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+        ]);
+    }
+    public static function testimonials(){
+        return request()->validate([
+            "name"=>"string | between:4,100  ",
+            "stars"=>"integer | nullable  ",
+            "content"=>"string | nullable  ",
+
+
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+        ]);
+    }
+    public static function feature2(){
+        return request()->validate([
+            "title"=>"string | between:4,100  ",
+            "font"=>"string | nullable  ",
+            "content"=>"string | nullable  ",
+            "text"=>"string | nullable  ",
+
+
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+        ]);
+    }
+
     public static function make(){
         return request()->validate([
         "title"=>"nullable | string",

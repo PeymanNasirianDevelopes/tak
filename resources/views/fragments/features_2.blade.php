@@ -21,7 +21,7 @@
 									<i class="{{$feature_section->font}} icon-size-24 icon-cover-55 cover-quadrangle-icon cover-icon-bg-green"></i>
 									<h5>{{$feature_section->title}}</h5>
 									<p>
-									{{$feature_section->content}}
+									{!! $feature_section->content !!}
 									</p>
 								</div>
 							</div>

@@ -278,6 +278,88 @@ $urltitle30 = explode('/', $urltitle20);
 
 
 
+      if($urltitle4=="tabs"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد تب ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش تب ";
+    }
+        }
+
+
+}
+    else{
+        $circle="تب ها ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+
+
+
+      if($urltitle4=="testimonials"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد نظر ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش نظر ";
+    }
+        }
+
+
+}
+    else{
+        $circle="نظرات مشتریان";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+
+
+      if($urltitle4=="features_2"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد ویژگی 2 ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش ویژگی 2 ";
+    }
+        }
+
+
+}
+    else{
+        $circle="ویژگی 2";
+    }
+      }
+
+//-------------------------------------------------------------------
+
 
 
 }

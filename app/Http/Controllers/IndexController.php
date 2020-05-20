@@ -9,6 +9,7 @@ use App\Feature;
 use App\MakeDream;
 use App\CircleCounter;
 use App\FeatureSection;
+use App\Testimonial;
 use App\Video;
 use App\Plan;
 use App\Tab;
@@ -41,12 +42,13 @@ class IndexController extends Controller
         $footers=Footer::all() ?? new Footer;
         $menus=Menu::all()->where("class","x-megamenu") ?? new Menu;
         $menu_dives=Menu::all()->where("class",NULL) ?? new Menu;
+        $testimonials=Testimonial::all() ?? new Testimonial;
 
 
         $tabs=Tab::all() ?? new Tab;
 
         return view("index")->with(compact('header','services','abouts', 'feature','make_dream','circles','tabs','feature_section_image','feature_sections','video','plans'
-        ,'clients','landing','contact','footers','menus','menu_dives'));
+        ,'clients','landing','contact','footers','menus','menu_dives','testimonials'));
 
 
 
