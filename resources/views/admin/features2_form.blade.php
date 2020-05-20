@@ -32,8 +32,8 @@
                     <input type="hidden" name="id" value="{{$featureSection->id}}">
 
                 @endif
-                <label>نام</label>
-                <input class="form-control input-lg" name="title" type="text" placeholder="نام" value="{{$featureSection->title ?? old("title")}}">
+                <label>عنوان</label>
+                <input class="form-control input-lg" name="title" type="text" placeholder="عنوان" value="{{$featureSection->title ?? old("title")}}">
                 <br>
                 فونت: <select dir="rtl" name="font" class="form-control select2" style="width: 100%;">
 

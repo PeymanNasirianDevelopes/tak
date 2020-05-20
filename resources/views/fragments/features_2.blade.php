@@ -7,7 +7,7 @@
 						<div class="row">
 							<div class="col-md-12 text-center">
 								<div class="row-top-gap"></div>
-								<img class="img-maxwidth" src="{{asset("images/$feature_section_image->image")}}" alt="Featured Content Image">
+								<img class="img-maxwidth" src="{{asset("images/$feature_section_image->main_image")}}" alt="Featured Content Image">
 								<div class="row-top-gap"></div>
 							</div>
 						</div>

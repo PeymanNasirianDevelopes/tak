@@ -7,77 +7,51 @@ use Illuminate\Http\Request;
 
 class VideoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $video=Video::first();
+        return view("admin.video")->with(compact("video"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Video  $video
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Video $video)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Video  $video
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Video $video)
     {
-        //
+        return view("admin.video")->with(compact("video"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Video  $video
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Video $video)
     {
-        //
+        $data=ValidationController::video();
+
+        if($photo= $request->file('bg_image')){
+            $data['bg_image']= do_upload($photo);
+        }
+        $update=$video->update($data);
+        if($update){
+            return redirect("app/cms/admin/video/1/edit");
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Video  $video
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Video $video)
     {
         //

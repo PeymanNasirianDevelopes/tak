@@ -97,6 +97,77 @@ class ValidationController extends Controller
 
         ]);
     }
+    public static function video(){
+        return request()->validate([
+            "title"=>"string | between:4,100  ",
+            "btn_name"=>"string | nullable  ",
+            "link"=>"string | nullable  ",
+            "show"=>"integer | nullable  ",
+
+
+            "bg_image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+        ]);
+    }
+
+
+    public static function plans(){
+        return request()->validate([
+            "title"=>"string | between:4,100  ",
+            "btn_name"=>"string | nullable  ",
+            "currency"=>"string | nullable  ",
+            "period"=>"string | nullable  ",
+            "content"=>"string | nullable  ",
+            "price"=>"integer | nullable  ",
+
+
+        ]);
+    }
+
+    public static function landing(){
+        return request()->validate([
+            "title"=>"string | between:4,100  ",
+            "content"=>"string | nullable  ",
+            "show"=>"integer | nullable  ",
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+
+        ]);
+    }
+
+    public static function clients(){
+        return request()->validate([
+            "company_name"=>"string | between:4,100  ",
+            "link"=>"string | nullable  ",
+
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+
+        ]);
+    }
+
+    public static function logo(){
+        return request()->validate([
+            "alt"=>"string | between:4,100  ",
+
+
+            "main_logo"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+            "header_logo"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+            "footer_image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+
+        ]);
+    }
+    public static function team(){
+        return request()->validate([
+            "name"=>"string | between:4,100  ",
+            "job"=>"string | between:4,100  ",
+
+            "image"=>"image | mimes:jpg,jpeg,png,tiff | max:2000 | nullable ",
+
+
+        ]);
+    }
 
     public static function make(){
         return request()->validate([

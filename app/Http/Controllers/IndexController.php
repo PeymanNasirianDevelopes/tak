@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\About;
+use App\Logo;
 use App\slider;
 use App\Service;
 use App\Feature;
 use App\MakeDream;
 use App\CircleCounter;
 use App\FeatureSection;
+use App\Team;
 use App\Testimonial;
 use App\Video;
 use App\Plan;
@@ -43,12 +45,14 @@ class IndexController extends Controller
         $menus=Menu::all()->where("class","x-megamenu") ?? new Menu;
         $menu_dives=Menu::all()->where("class",NULL) ?? new Menu;
         $testimonials=Testimonial::all() ?? new Testimonial;
+        $logo=Logo::first();
+        $teams=Team::all() ?? new Team;
 
 
         $tabs=Tab::all() ?? new Tab;
 
         return view("index")->with(compact('header','services','abouts', 'feature','make_dream','circles','tabs','feature_section_image','feature_sections','video','plans'
-        ,'clients','landing','contact','footers','menus','menu_dives','testimonials'));
+        ,'clients','landing','contact','footers','menus','menu_dives','testimonials','logo','teams'));
 
 
 

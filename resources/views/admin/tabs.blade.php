@@ -6,7 +6,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">پیشرفت کار</h3>
+                        <h3 class="box-title"> تب ها</h3>
                     </div>
 
                     @if(session('message'))

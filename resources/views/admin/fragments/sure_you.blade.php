@@ -1,8 +1,8 @@
-<div class="text-center exact-center animated bounceInLeft " id="sure_you"  style="display: none; z-index: 100;">
+<div class="text-center exact-center animated bounceInLeft " id="sure_you"  style="display: none; z-index: 100; background-color: white;">
 
 <p class="lead">
 
-مطمئنی؟
+آیا از حذف این آیتم مطمئن هستید؟
 </p>
 
 

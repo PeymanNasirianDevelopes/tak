@@ -129,13 +129,14 @@
 			<br>
 
 			<!-- CTA BOX - 6 -->
+            @if($landing->show)
 			<section>
 				<div class="cta cta-box-6 cta-bg-cover-black" data-parallax-type="fixed" data-parallax-img="{{asset("images/$landing->image")}}">
 					<div class="cta-wrap">
 						<div class="headline-6 text-center" data-animation="fadeIn">
 							<h2 class="h-extra-large h-white">{{$landing->title}}</h2>
 							<div class="divider styled-1"></div>
-							<p class="h-white">{{$landing->content}}</p>
+							<p class="h-white">{!! $landing->content !!}</p>
 						</div>
 						<div class="btn-wrap text-center" data-animation="fadeIn">
 							<a class="btn btn-appstore btn-apple btn-white" href=""></a>
@@ -148,7 +149,7 @@
 			<br>
 			<br>
 			<br>
-
+@endif
 			<!-- client Boxes #1 -->
 @include ("fragments.clients")
 			<!-- / client Boxes #1 -->
@@ -156,7 +157,10 @@
 			<br>
 			<br>
 			<br>
-
+            @include ("fragments.team")
+            <br>
+            <br>
+            <br>
 			<!-- CONTACT SECTION - 3 -->
 @include ("fragments.contact")
 

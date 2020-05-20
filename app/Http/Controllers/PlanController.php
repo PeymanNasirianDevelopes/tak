@@ -3,83 +3,78 @@
 namespace App\Http\Controllers;
 
 use App\Plan;
+use App\PlansLi;
 use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $plans=Plan::all();
+        return view("admin.plans")->with(compact("plans"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function create(Plan $plan)
     {
-        //
+        return view("admin.plans_form")->with(compact("plan"));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $data=ValidationController::plans();
+        Plan::create($data);
+        HelperController::flash();
+        return redirect("app/cms/admin/plans");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Plan  $plan
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Plan $plan)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Plan  $plan
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Plan $plan)
     {
-        //
+        return view("admin.plans_form")->with(compact("plan"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Plan  $plan
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Plan $plan)
     {
-        //
+        $data=ValidationController::plans();
+
+        if($list=$request->list){
+            $id=$request->id;
+            PlansLi::make($list,$id);
+        }
+
+        if($photos_tobe_deleted=$request->photo_ids){
+
+            foreach ($photos_tobe_deleted as $id){
+                $photo_id=  PlansLi::find($id);
+                $photo_id->delete();
+
+
+            }
+        }
+
+
+
+
+
+
+
+        $plan->update($data);
+        return redirect("app/cms/admin/plans");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Plan  $plan
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Plan $plan)
     {
-        //
+        $plan->delete();
+        return redirect("app/cms/admin/plans");
     }
 }

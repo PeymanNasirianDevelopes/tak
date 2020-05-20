@@ -66,7 +66,7 @@
 
 										<div class="about-company">
 											<h6>{{$contact->head}}</h6>
-											<p>{{$contact->about_us}}</p>
+											<p>{!! $contact->about_us !!}</p>
 										</div>
 
 										<div class="follow-us">

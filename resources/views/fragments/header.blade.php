@@ -3,7 +3,7 @@
         <!-- Menu wrapper element should has "x-menu-wrapper" class -->
         <div class="x-menu-wrapper clearfix">
             <!-- Logo -->
-            <div class="logo"><a href="http://raiseapp-html.themeapollo.com/index.html"><img src="{{asset("images/logo_gw_.png")}}" alt="Logo"></a></div>
+            <div class="logo"><a href="{{url("/")}}"><img src="{{asset("images/$logo->header_logo")}}" alt="Logo"></a></div>
             <!-- Toggle button -->
             <a class="x-menu-toggle toggle-right" href="javascript: void(0);"><span></span></a>
             <!-- Body of menu -->

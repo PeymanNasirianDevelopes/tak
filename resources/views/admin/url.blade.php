@@ -362,6 +362,243 @@ $urltitle30 = explode('/', $urltitle20);
 
 
 
+
+
+
+
+      if($urltitle4=="video"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد ویدئو ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش ویدئو ";
+    }
+        }
+
+
+}
+    else{
+        $circle="ویرایش ویدئو ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+      if($urltitle4=="plans"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد پلن جدید ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش پلن ";
+    }
+        }
+
+
+}
+    else{
+        $circle="پلن ها ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+
+      if($urltitle4=="landing"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد لندینگ ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش لندینگ ";
+    }
+        }
+
+
+}
+    else{
+        $circle="لندینگ ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+      if($urltitle4=="clients"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد مشتری ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش مشتری ";
+    }
+        }
+
+
+}
+    else{
+        $circle="مشتریان ما ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+
+      if($urltitle4=="contact"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد تماس با ما ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش تماس با ما ";
+    }
+        }
+
+
+}
+    else{
+        $circle="تماس با ما ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+      if($urltitle4=="logo"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد لوگو ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش لوگو ";
+    }
+        }
+
+
+}
+    else{
+        $circle="لوگو ها ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+
+
+      if($urltitle4=="team"){
+    if(count($urltitle3)>1){
+
+    $urltitle5=$urltitle3[1];
+        if($urltitle5=="create"){
+            $circle= "ایجاد شخص جدید ";
+
+    }
+        else{
+               $urltitle6=$urltitle3[2];
+
+   if ($urltitle6=="edit"){
+        $circle= "ویرایش شخص ";
+    }
+        }
+
+
+}
+    else{
+        $circle="اعضای تیم ";
+    }
+      }
+
+//-------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
     else{
         $circle="داشبرد مدیریت";

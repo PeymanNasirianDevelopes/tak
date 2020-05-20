@@ -7,79 +7,62 @@ use Illuminate\Http\Request;
 
 class ClientController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $clients=Client::all();
+        return view("admin.clients")->with(compact("clients"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+
+    public function create(Client $client)
     {
-        //
+        return view("admin.clients_form")->with(compact("client"));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $data=ValidationController::clients();
+        if($photo= $request->file('image')){
+            $data['image']= do_upload($photo);
+        }
+        $create=Client::create($data);
+        if($create){
+            HelperController::flash();
+            return redirect("app/cms/admin/clients");
+        }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Client $client)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Client $client)
     {
-        //
+        return view("admin.clients_form")->with(compact("client"));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Client $client)
     {
-        //
+       $data=ValidationController::clients();
+        if($photo= $request->file('image')){
+            $data['image']= do_upload($photo);
+        }
+        $update=$client->update($data);
+        if($update){
+            return redirect("app/cms/admin/clients");
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Client  $client
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Client $client)
     {
-        //
+        $client->delete();
+        return redirect("app/cms/admin/clients");
     }
 }

@@ -19,7 +19,7 @@
 										</div>
 									</div><!-- /.price-value -->
 									<h4>{{$plan->title}}</h4>
-									<p>{{$plan->content}}</p>
+									<p>{!! $plan->content !!}</p>
 								</div><!-- /.price-header -->
 								<div class="price-body">
 									<div class="price-services">
@@ -31,7 +31,7 @@
 										</ul>
 									</div><!-- /.price-services -->
 									<div class="price-apply">
-										<a class="btn" href="{{$plan->btn_link}}"><i class="icon-link"></i> {{$plan->btn_name}}</a>
+										<a class="btn" href="{{$plan->btn_link}}"> {{$plan->btn_name}}</a>
 									</div><!-- /.price-apply -->
 								</div><!-- /.price-body -->
 							</div><!-- /.price -->
